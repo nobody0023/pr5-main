@@ -4,15 +4,71 @@
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title>3 Column Layout</title>
    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons%22%3E">
+   <link rel="stylesheet" href= "assets/css/layout.css" >
+   <link rel="stylesheet" href="assets/css/slide.css">
+   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <header class="header">
     <p><img src="assets/img/logo.png" alt="logo"> My website</p></header>
 <div class="container">
 	
-   <main class="center column">
+<main class="center column">
        <article>
-		<h1>Slider</h1>
+        <h1>Slider</h1>
+        <p>
+            <div class="wrapper">
+                <button class="btn btn-prev" onclick="prevSlide()"><i class="material-icons"></i></button>
+                <button class="btn btn-next" onclick="nextSlide()"><i class="material-icons"></i></button>
+                <div id="mySlider"></div>
+            <div id="circles"></div>
+            <style>
+                button:focus{outline: none}
+                .wrapper{
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                }
+                .btn{
+                    z-index: 999;
+                    position: absolute;
+                    top: calc(50% - (50px/2));
+                    margin: 10px;
+                    border: none;
+                }
+                .material-icons{
+                    margin-top: 3px;
+                    font-size: 36px;
+                }
+                .btn-prev .material-icons{margin-left: -3px;}
+                .btn-next .material-icons{margin-right: -3px;}
+
+                .btn-next{right: 0;}
+
+                .dot{
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+                    margin: 10px;
+                    background-color: #4ca74c;
+                    opacity: .3;
+                }
+                .dot_active{
+                    opacity: 1;
+                    background-color: #4ca74c;
+                }
+                .dot span{
+                    display: none;
+                }
+                #circles{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            </style>
+
+        </p>
        </article>
    </main>
    <nav class="left column">
@@ -39,4 +95,5 @@
        <p><img src="assets/img/logo.png" alt="logo"> My website</p></footer>
 </div>
 </body>
+    <script src="assets/js/script.js"></script>
 </html>
